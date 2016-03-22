@@ -2,6 +2,10 @@ var canvas = document.getElementsByClassName('paperCanvas').item(0);
 
 var context = canvas.getContext('2d');
 
+
+context.translate(800, 800);
+context.rotate(Math.PI);
+
 drawHouse(450, 600, 300);
 
 drawArc(200, 200, 100, 0, Math.PI * 2);
