@@ -2,13 +2,15 @@ var canvas = document.getElementsByClassName('paperCanvas').item(0);
 
 var context = canvas.getContext('2d');
 
+drawHouse(450, 600, 300);
 
-context.moveTo(100,100);
+drawArc(200, 200, 100, 0, Math.PI * 2);
+drawArc(200, 600, 100, 0, - Math.PI / 2);
 
-context.lineTo(100,150);
-context.lineTo(200,150);
-context.lineTo(200,100);
-context.lineTo(100,100);
+context.strokeStyle = "green";
+context.moveTo(200, 200);
+context.quadraticCurveTo(225, 125, 300, 200);
+context.stroke();
 
 function drawHouse(x, y, size) {
     context.strokeStyle = "black";
@@ -28,12 +30,6 @@ function drawHouse(x, y, size) {
     context.stroke();
 }
 
-//drawHouse(250, 200, 100);
-//drawHouse(50, 500, 200);
-drawHouse(450, 600, 300);
-
-//context.closePath()
-
 
 function drawArc(x, y, radio, startAngle, endAngle) {
     context.beginPath();
@@ -43,9 +39,4 @@ function drawArc(x, y, radio, startAngle, endAngle) {
     context.arc(x, y, radio, startAngle, endAngle);
     context.stroke();
 }
-
-
-drawArc(200, 200, 100, 0, Math.PI * 2);
-
-drawArc(200, 600, 100, 0, - Math.PI / 2);
 
